@@ -1,33 +1,35 @@
 package entity;
 
+import java.util.ArrayList;
+
 public class Compte {
     //Attributs d'instances ou objet
      private int id;
      private String  numero;
      private String dateCreation;
      private double  montant;
-     private final int N=10;
-     private Transaction[] transactions;
+
+     private ArrayList<Transaction> transactions ;
      private int nbreTransactions;
 
      public MessageTransaction addTransaction(Transaction transaction) {
-      if (nbreTransactions<N) {
+      
         if (transaction.getType()==TypeTransaction.Retrait) {
           if (transaction.getMontant()<montant) {
-              transactions[nbreTransactions++]=transaction;
+              transactions.add(transaction);
               montant-=transaction.getMontant();
              return MessageTransaction.RetraitSucces; 
            }else{
              return MessageTransaction.MontantInsuffisant;
            }
         }else{
-           transactions[nbreTransactions++]=transaction;
+           transactions.add(transaction);
            montant+=transaction.getMontant();
           return MessageTransaction.DepotSucces; 
         }
         
-      }
-        return MessageTransaction.TableauRempli;
+
+       
      }
 
      
@@ -36,7 +38,7 @@ public class Compte {
         //1-Instancier un Objet 
         //2-Initialser des attributs lors de la creation d'un objet
        public Compte(){
-        transactions=new Transaction[N];
+        transactions=new ArrayList<>();
        }
       //Getters 
       public int getId(){
@@ -87,7 +89,7 @@ public class Compte {
                     + "]";
         }
 
-        public Transaction[] getTransactions() {
+        public ArrayList<Transaction> getTransactions() {
           return transactions;
         }
         public int getNbreTransactions() {

@@ -1,5 +1,6 @@
 package vues;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import entity.Transaction;
 import entity.TypeTransaction;
@@ -20,9 +21,9 @@ public class TransactionVue {
        transaction.setType(saisieType());
        return transaction;
   } 
-  public static void affiche(Transaction[] transactions,int nbreTransactions){
-        for (int index = 0; index < nbreTransactions; index++) {
-              System.out.println(transactions[index]);
+  public static void affiche(ArrayList<Transaction> transactions){
+        for (int index = 0; index < transactions.size(); index++) {
+              System.out.println(transactions.get(index));
          }
       } 
 

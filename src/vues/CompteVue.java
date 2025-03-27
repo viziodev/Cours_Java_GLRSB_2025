@@ -1,6 +1,7 @@
 package vues;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Scanner;
 import entity.Compte;
 import services.ConvertDateService;
@@ -36,9 +37,9 @@ public class CompteVue {
         return val;
       }
 
-      public static void affiche(Compte[] comptes,int nbreCompte){
-        for (int index = 0; index < nbreCompte; index++) {
-              System.out.println(comptes[index].toString());
+      public static void affiche(ArrayList<Compte> comptes){
+        for (int index = 0; index < comptes.size(); index++) {
+              System.out.println(comptes.get(index).toString());
         }
       }
 
