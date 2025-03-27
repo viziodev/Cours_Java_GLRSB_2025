@@ -2,12 +2,10 @@ package vues;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Scanner;
 import entity.Compte;
 import services.ConvertDateService;
-
-public class CompteVue {
-     private static Scanner scanner=new Scanner(System.in);
+//Classe de Derivee ou Classe Fille ou Sous Classe 
+public class CompteVue extends Vue {
       public static Compte saisie(){
            Compte compte;
            compte= new Compte();
@@ -19,24 +17,7 @@ public class CompteVue {
            compte.setMontant(saisieDoublePositif("Entrer le solde du compte"));
            return compte;
       }
-      public static String  saisieChaine(String sms){
-        String ch;
-        do {
-              System.out.println(sms); 
-              ch=scanner.nextLine();
-        } while ( ch.equals(""));
-        return ch;
-      }
-
-      public static double  saisieDoublePositif(String sms){
-        double val;
-        do {
-              System.out.println(sms); 
-              val=scanner.nextDouble();
-        } while (val<=0);
-        return val;
-      }
-
+     
       public static void affiche(ArrayList<Compte> comptes){
         for (int index = 0; index < comptes.size(); index++) {
               System.out.println(comptes.get(index).toString());

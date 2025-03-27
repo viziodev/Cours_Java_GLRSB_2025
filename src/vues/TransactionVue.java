@@ -1,20 +1,11 @@
 package vues;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 import entity.Transaction;
 import entity.TypeTransaction;
 
-public class TransactionVue {
-     private static Scanner scanner=new Scanner(System.in);
-     public static double  saisieDoublePositif(String sms){
-        double val;
-        do {
-              System.out.println(sms); 
-              val=scanner.nextDouble();
-        } while (val<=0);
-        return val;
-      }
+//Classe de Derivee ou Classe Fille ou Sous Classe 
+public class TransactionVue extends Vue {
   public static Transaction saisie(){
        Transaction transaction=new Transaction();
        transaction.setMontant(saisieDoublePositif("Veuillez entrer le montant une transaction"));
