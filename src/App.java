@@ -74,8 +74,8 @@ public class App {
           "1-Créer  un  compte\n" + 
          "2-Afficher les comptes\n" + 
          "3-Ajouter  une Transaction à un compte\n" + 
-        "4-Lister les transactions d’un compte\n" + //
-        "5-Quitter\n" );
+          "4-Lister les transactions d’un compte\n" + //
+          "5-Quitter\n" );
         return scanner.nextInt() ; 
     }
 }
